@@ -14,17 +14,23 @@ class Node {
 // When current is finally at the tail (null) return the number res
 
 // Approach: Iterative -> While head is not null, add the increment the value of head to a results var and return results.
+// const sumList = head => {
+//   let res = 0
+//   let current = head
+
+//   while (current != null) {
+//     res += current.val
+//     current = current.next
+//   }
+
+//   return res
+// }
+
+// Approach: Recursive -> Recursively call adding head.next to the current value until the list is empty in which case we return 0 and process the stack.
 const sumList = head => {
-  let res = 0
-  let current = head
-
-  while (current != null) {
-    res += current.val
-    current = current.next
+    if(head === null) return 0;
+    return head.val + sumList(head.next)
   }
-
-  return res
-}
 
 const a = new Node(2)
 const b = new Node(8)

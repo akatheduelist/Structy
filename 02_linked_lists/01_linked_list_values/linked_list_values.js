@@ -5,7 +5,6 @@ class Node {
     }
 }
 
-// Approach: Itterative -> Push node value into arr until reaching tail.
 // Initiate a res to empty array
 // Initial current node to head
 // *While current not eq null
@@ -13,14 +12,30 @@ class Node {
 // **Assign current to head.next
 // Return res array
 
+// Approach: Itterative -> Push node value into arr until reaching tail.
+// const linkedListValues = head => {
+//     const res = [];
+//     let current = head;
+//     while(current != null) {
+//         res.push(current.val);
+//         current = current.next
+//     }
+//     return res;
+// }
+
+// Approach: Recursive -> Use a helper function to recursively pass in the value and pointer to res array until current value is null.
+
+// Note: Need to use helper function because when passing a primitive like an array (res) into a helper function it references the pointer to res. If the recursive call was in the main function it would create copies of the array increasing the time and space complexity unneccesarrily. By using the helper function we can manipulate the array in place keeping the time and space to O(n) like the iterative approach.
 const linkedListValues = head => {
     const res = [];
-    let current = head;
-    while(current != null) {
-        res.push(current.val);
-        current = current.next
-    }
+    insertValue(head, res)
     return res;
+}
+
+const insertValue = (head, res) => {
+    if(head === null) return
+    res.push(head.val)
+    insertValue(head.next, res)
 }
 
 const a = new Node('a')

@@ -13,24 +13,31 @@ class Node {
 // **current = current.next
 
 // Approach: Iterative - Keep a count while traversing the linked list.
-const getNodeValue = (head, index) => {
-  let count = 0;
-  let current = head;
+// const getNodeValue = (head, index) => {
+//   let count = 0;
+//   let current = head;
 
-  while (count <= index) {
-    if(count === index) {
-      return current.val
-    } else {
-      count++
-    }
-    if(current.next === null) {
-      return null
-    } else {
-      current = current.next
-    }
-  }
-};
+//   while (count <= index) {
+//     if(count === index) {
+//       return current.val
+//     } else {
+//       count++
+//     }
+//     if(current.next === null) {
+//       return null
+//     } else {
+//       current = current.next
+//     }
+//   }
+// };
+
 // Approach: Recursive - Pass along the index given and decrease by one when passing through the the recursive call. Once the index is 0 we return the value up the stack.
+const getNodeValue = (head, index) => {
+    if(head === null) return null;
+    if(index === 0) return head.val;
+    return getNodeValue(head.next, index - 1);
+  };
+
 
 // Testing  
 // a -> b -> c -> d

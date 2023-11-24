@@ -7,16 +7,30 @@ class Node {
 
 // Approach: Iterative
 const reverseList = (head) => {
-    let current = head;
-    let prev = null;
-    while (current !== null) {
-      const next = current.next;
-      current.next = prev;
-      prev = current;
-      current = next;
-    }
-    return prev.val;
+    // Init Prev to Null, Curr to Head.val, Next to Head.next
+    let prev = null; // A
+    let current = head; // B > A
+    let next = head.next; // C
+
+    
+    // While Curr is not Null
+    while(current != null) {
+        // Next is now Curr.next
+        next = current.next
+        // Curr.next is now Prev
+        current.next = prev;
+        // Prev is now Curr
+        prev = current;
+        // Curr is now Next
+        current = next;
+        // console.log("PREV>>", prev.val, "CURR>>", current.val, "NEXT>>", next.val)
+    };
+
+    // When Curr is Null Return Prev
+    return prev.val
   };
+
+  
 // b -> a -> c -> d -> e -> f
 // a -> b -> c -> d -> e -> f
 // c=b  t=b

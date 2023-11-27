@@ -6,7 +6,7 @@ class Node {
 }
 
 const createLinkedList = (values) => {
-  let newList = new Node(null);
+  const newList = new Node(null);
   let tail = newList
 
   for(let i = 0; i < values.length; i++) {

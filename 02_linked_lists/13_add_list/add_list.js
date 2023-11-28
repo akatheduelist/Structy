@@ -5,20 +5,20 @@ class Node {
   }
 }
 
+// traverse list 1 append each val into beginning of array
+// convert array to Number
+// repeate for list 2
+// add list 1 and list 2 numbers together into a new array
+// traverse new array creating nodes for each val
+// return the head of resulting linked list
+
 const addLists = (head1, head2) => {
   let current1 = head1;
   let num1 = []
   let current2 = head2;
   let num2 = []
   let res = new Node(null);
-  let tail = res;
-  
-  // traverse list 1 append each val into beginning of array
-  // convert array to Number
-  // repeate for list 2
-  // add list 1 and list 2 numbers together into a new array
-  // traverse new array creating nodes for each val
-  // return the head of resulting linked list
+  let tail = res;  
   
   while(current1 != null || current2 != null) {
     if(current1 != null) {

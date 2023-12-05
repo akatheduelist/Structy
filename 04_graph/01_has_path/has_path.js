@@ -1,23 +1,32 @@
-// Approach: 
 // Input 1: Obj -> Adj List -> Graph -> Directional -> Non-Cyclic
 // Input 2: Source
 // Input 3: Destination
 // Output: Boolean -> Is there a path from the source to dest?
 
-const hasPath = (graph, src, dst) => {
-  const stack = [src]; // ['g', 'g']
-  // console.log(stack)
-  while(stack.length) {
-    const current = stack.pop(); // 'i'
+// Approach: Depth First -> Iterative
+// const hasPath = (graph, src, dst) => {
+//   const stack = [src]; // ['g', 'g']
+//   // console.log(stack)
+//   while(stack.length) {
+//     const current = stack.pop(); // 'i'
 
-    if(current === dst) return true;
+//     if(current === dst) return true;
     
-    for(let neighbor of graph[current]) {
-      if(neighbor === dst) return true; // 'k' -> Return True
-      stack.push(neighbor);
-    };
-  }
+//     for(let neighbor of graph[current]) {
+//       if(neighbor === dst) return true; // 'k' -> Return True
+//       stack.push(neighbor);
+//     };
+//   }
 
+//   return false;
+// };
+
+// Approach Depth First -> Recursive
+const hasPath = (graph, src, dst) => {
+  if(src === dst) return true;
+  for(let neighbor of graph[src]) {
+    if(hasPath(graph, neighbor, dst)) return true;
+  };
   return false;
 };
 

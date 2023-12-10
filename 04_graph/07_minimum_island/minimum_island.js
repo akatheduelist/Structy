@@ -4,7 +4,7 @@ const minimumIsland = (grid) => {
 
   for(let x=0; x<grid.length; x++){
     for(let y=0; y<grid[x].length; y++) {
-      islandSize = explorer(grid, x, y, visited); // Is this land or not? If it is.. How big is the island? -> 0 or size of island;
+      let islandSize = explorer(grid, x, y, visited); // Is this land or not? If it is.. How big is the island? -> 0 or size of island;
       if(islandSize > 0 && islandSize < smallest) smallest = islandSize;
     }
   }

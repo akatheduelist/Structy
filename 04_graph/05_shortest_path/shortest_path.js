@@ -10,9 +10,7 @@ const shortestPath = (edges, nodeA, nodeB) => {
   const adjList = makeList(edges);
   const visited = new Set();
 
-  let path = graphSearch(adjList, nodeA, nodeB, visited)
-
-  return path;
+  return graphSearch(adjList, nodeA, nodeB, visited)
 };
 
 const makeList = (edges) => {
@@ -41,13 +39,10 @@ const makeList = (edges) => {
 
 const graphSearch = (adjList, src, dst, visited) => {
   const queue = [[src, 0]]
-  console.log(adjList)
 
   while(queue.length) {
     const [currentVal, currentLevel] = queue.shift()
-    console.log(currentVal, currentLevel);
 
-    // Do stuffff
     if(currentVal === dst) return currentLevel;
     if(!visited.has(String(currentVal))) {
       visited.add(String(currentVal));

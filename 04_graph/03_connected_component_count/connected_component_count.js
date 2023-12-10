@@ -1,7 +1,7 @@
 // Input: adjList -> Undirected Graph
 // Output: Number of connected components in the graph
 
-// Approach: 
+// Approach: Depth First -> Recursive using helper function
 const connectedComponentsCount = (graph) => {
   let count = 0; // 0
   const visited = new Set(); // {}

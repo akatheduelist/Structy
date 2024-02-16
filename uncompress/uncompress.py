@@ -1,3 +1,4 @@
+
 def uncompress(s):
   '''
   --Two Pointer Strategy--
@@ -7,21 +8,21 @@ def uncompress(s):
   7f or it could be 7000f, so we increment the first pointer until we find the "f".
   Once an string is found you slice the entire number section of the input and 
   cast it to an int 7 or 7000. Then we repeat the string char that many times,
-  increment the "start" pointer to the next number and bring the "end" pointer up
-  to meet the start pointer to start the loop again.
+  increment the "i" pointer to the next number and bring the "j" pointer up
+  to meet the i pointer to i the loop again.
   '''
   str = ""
-  start = 0
-  end = 0
+  j = 0
+  i = 0
   
-  while end < len(s):
-    if s[end].isnumeric():
-      end += 1
+  while j < len(s):
+    if s[j].isnumeric():
+      j += 1
     else:
-      num = int(s[start:end])
-      str += s[end] * num
-      end += 1
-      start = end
+      num = int(s[i:j])
+      str += s[j] * num
+      j += 1
+      i = j
   
   print(str)
   return str

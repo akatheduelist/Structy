@@ -2,44 +2,44 @@ Write a function, anagrams, that takes in two strings as arguments. The function
 
 test_00
 
-anagrams('restful', 'fluster') # -> True
+anagrams('restful', 'fluster'); // -> true
 
 test_01
 
-anagrams('cats', 'tocs') # -> False
+anagrams('cats', 'tocs'); // -> false
 
 test_02
 
-anagrams('monkeyswrite', 'newyorktimes') # -> True
+anagrams('monkeyswrite', 'newyorktimes'); // -> true
 
 test_03
 
-anagrams('paper', 'reapa') # -> False
+anagrams('paper', 'reapa'); // -> false
 
 test_04
 
-anagrams('elbow', 'below') # -> True
+anagrams('elbow', 'below'); // -> true
 
 test_05
 
-anagrams('tax', 'taxi') # -> False
+anagrams('tax', 'taxi'); // -> false
 
 test_06
 
-anagrams('taxi', 'tax') # -> False
+anagrams('taxi', 'tax'); // -> false
 
 test_07
 
-anagrams('night', 'thing') # -> True
+anagrams('night', 'thing'); // -> true
 
 test_08
 
-anagrams('abbc', 'aabc') # -> False
+anagrams('abbc', 'aabc'); // -> false
 
 test_09
 
-anagrams('po', 'popp') # -> false
+anagrams('po', 'popp'); // -> false
 
 test_10
 
-anagrams('pp', 'oo') # -> false
+anagrams('pp', 'oo') // -> false

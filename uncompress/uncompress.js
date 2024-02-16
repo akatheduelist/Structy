@@ -1,17 +1,29 @@
+
 const uncompress = (s) => {
+  /*
+  --Two Pointer Strategy--
+  Init two pointers to index 0
+  Increment over each char until a non int is found. This is needed becuase the 
+  "number" of repeats for a compressed string may be multiple digits. It could be 
+  7f or it could be 7000f, so we increment the first pointer until we find the "f".
+  Once an string is found you slice the entire number section of the input and 
+  cast it to an int 7 or 7000. Then we repeat the string char that many times,
+  increment the "i" pointer to the next number and bring the "j" pointer up
+  to meet the i pointer to i the loop again.
+  */
   let str = ''
-  let pointer1 = 0
-  let pointer2 = 0
+  let j = 0
+  let i = 0
   
-  while(pointer1 < s.length) {
-    if(!isNaN(s[pointer1])) {
-      pointer1++;
+  while(j < s.length) {
+    if(!isNaN(s[j])) {
+      j++;
     }
     else {
-      const qty = Number(s.slice(pointer2, pointer1));
-      str += s[pointer1].repeat(qty)
-      pointer1++;
-      pointer2 = pointer1;
+      const qty = Number(s.slice(i, j));
+      str += s[j].repeat(qty)
+      j++;
+      i = j;
     } 
   }
   

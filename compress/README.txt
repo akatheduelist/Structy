@@ -9,21 +9,21 @@ You can assume that the input only contains alphabetic characters.
 
 test_00
 
-compress('ccaaatsss'); // -> '2c3at3s'
+compress('ccaaatsss') # -> '2c3at3s'
 
 test_01
 
-compress('ssssbbz'); // -> '4s2bz'
+compress('ssssbbz') # -> '4s2bz'
 
 test_02
 
-compress('ppoppppp'); // -> '2po5p'
+compress('ppoppppp') # -> '2po5p'
 
 test_03
 
-compress('nnneeeeeeeeeeeezz'); // -> '3n12e2z'
+compress('nnneeeeeeeeeeeezz') # -> '3n12e2z'
 
 test_04
 
 compress('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'); 
-// -> '127y'
+# -> '127y'

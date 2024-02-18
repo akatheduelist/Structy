@@ -10,12 +10,6 @@ const intersection = (a, b) => {
   */
   
   const set = new Set();
-​
-  // while (index < a.length || index < b.length) {
-  //   if (a[index]) setA.add(a[index])
-  //   if (b[index]) setB.add(b[index])
-  //   index++
-  // }
   
   for(let item of a){
     set.add(item)
